@@ -1,3 +1,7 @@
+//
+//  beaconExample.swift
+//
+
 import Foundation
 import CoreLocation
 
@@ -29,7 +33,7 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
         }
     }
 
-    // MARK: CLLocationManagerDelegate
+    // CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didDetermineState state: CLRegionState, forRegion region: CLRegion!) {
         if let region = region as? CLBeaconRegion {
             switch state {
@@ -69,7 +73,7 @@ class BeaconManager: NSObject, CLLocationManagerDelegate {
         }
     }
 
-    // MARK: ()
+    // ()
     func regionFromBeacon(beacon: CLBeacon) -> CLBeaconRegion {
         let major = CLBeaconMajorValue(beacon.major.integerValue)
         let minor = CLBeaconMinorValue(beacon.minor.integerValue)
